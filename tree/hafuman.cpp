@@ -183,6 +183,7 @@ bool insertTest(tree t , char* str)
 
     for(int i = 0 ; i <size; i++)
     { 
+        //先01 然后 011
         if(t->flag == true)
         {
             return false;
@@ -221,15 +222,18 @@ bool insertTest(tree t , char* str)
         }
         else
         {
+            //处理 011 01
             return false;
         }
 
     }
     else
     {
+        //处理 01 01
         return false;
     }
 }
+
 
 void freeTest(tree t)
 {
