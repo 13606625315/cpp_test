@@ -113,7 +113,17 @@ void dijkstra(ptrGraph g)
     int v = g->start;
     for(int i = 0; i < g->v;i++)
     {
-        dist[i] = g->data[v][i];
+      //  dist[i] = g->data[v][i];
+        if(i == v)
+        {
+            dist[i].len = 0;
+            dist[i].cost = 0;
+        }
+        else
+        {
+            dist[i].len = infinity;
+            dist[i].cost = infinity;
+        }
     }
     while(1)
     {
